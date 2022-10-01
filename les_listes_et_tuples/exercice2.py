@@ -10,3 +10,8 @@ print(liste)
 
 liste.remove("deux")
 print(liste)
+
+premier_element = liste[0]
+deuxime_element = liste[1]
+print(premier_element)
+print(deuxime_element)
