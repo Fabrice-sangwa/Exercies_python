@@ -19,10 +19,10 @@ while True :
         print(f"L'ennemi vous a infligé {her_domage_point} de dégats")
         
         if your_life_points <= 0 :
-            print("Vous avez perdu, Game over")
+            print("0 point de vie.\nVous avez perdu, Game over")
             break
         elif enemy_s_life_points <= 0 :
-            print("Vous avez gagné !")
+            print("L'ennemi est mort !\nVous avez gagné !")
             break
         else : 
             print(f"Il vous reste {your_life_points} points de vie.")
@@ -53,7 +53,7 @@ while True :
                 print(f"Il reste {enemy_s_life_points} points de vie à l'ennemi.")
                 print("-"*37)
                 
-                print("Vous passez votre tour...")
+                print("Vous passez votre tour..............")
                 
                 her_domage_point = random.randint(5, 15)
                 your_life_points -= her_domage_point
@@ -72,7 +72,7 @@ while True :
                     print("-"*37)
                      
         elif potion <= 0 : 
-                print("Vous n'avez plus de potion. ")
+                print("Vous n'avez plus de potion.")
                 continue
             
     
