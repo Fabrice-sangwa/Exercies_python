@@ -10,7 +10,6 @@ mystery_number = randint(1, 100)
 
 while True:
     if tests == 0:
-        
         print(f"Tu as atteint la limite !\nLe nombre mystère était {mystery_number}\nGame over")
         break
     else : 
