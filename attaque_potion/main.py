@@ -58,7 +58,7 @@ while True :
                 her_domage_point = random.randint(5, 15)
                 your_life_points -= her_domage_point
                 
-                print(f"L'ennemi vous a infligé {her_domage_point} de dégats")
+                print(f"L'ennemi vous a infligé {her_domage_point} points de dégats")
                 
                 if your_life_points <= 0 :
                     print("Vous avez perdu, Game over")
