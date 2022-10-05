@@ -1,10 +1,13 @@
 import json
 import os
 
+#we get the path of the course folder where the script will be executed
+
 CUR_DIR = os.path.dirname(__file__)
 CUR_DIR =  os.path.join(CUR_DIR, "liste.json")
 
 
+#we verify if the json file exist to load their content
 
 if os.path.exists(CUR_DIR):
     liste = []
@@ -15,11 +18,14 @@ else :
     liste = []
     
 
+#we organize the options and fonctions also some display fonctions
+
 options = ["1", "2", "3", "4", "5"]
 fonctions = "1: Ajouter un élément à la liste de courses\n2: Retirer un élément de la liste de courses\n3: Afficher les éléments de la liste de courses\n4: Vider la liste de courses\n5: Quitter le programme"
 line = "-" * 40
 indicator = "\U0001F449"
 
+#principal loop
 
 while True : 
     print(fonctions)
@@ -81,20 +87,17 @@ while True :
             while answer !="y" and answer != "n":
                 answer = input(f"Erreur choisissez soit y, soit n\n{indicator} ")
             if answer== "y":
-                
                 if os.path.exists(CUR_DIR) :
                     with open(CUR_DIR, "r") as f :
                         save_list = json.load(f)
                     for i in liste :
                         if not i in save_list:
                             save_list.append(i)
-                    
                     with open(CUR_DIR, "w") as f :
                         json.dump(save_list, f, indent=4)
                 else :
                     with open(CUR_DIR, "w") as f :
                         json.dump(liste, f, indent=4)
-                    
                 print("A bientot")
                 os.sys.exit()   
             else : 
