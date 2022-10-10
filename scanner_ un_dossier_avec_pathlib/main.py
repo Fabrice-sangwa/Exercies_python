@@ -1,4 +1,4 @@
-import imp
+
 from pathlib import Path
 
 p = Path.home().iterdir()
