@@ -1,27 +1,4 @@
 
-"""
-
-entreprise = {
-    "employees_list" :{
-        1 : {
-            "name"  : "Fabrice",
-            "last_name" : "SANGWA" 
-        }, 
-        2 : {
-            "name" : "John",
-            "last_name" : "Smith"
-        },
-        3 : {
-            "name" : "Patricia",
-            "last_name" : "Larson"
-        }
-        
-    }
-}
-
-print(entreprise["employees_list"][1]["name"])
-print(entreprise.get("employees_list"))    
-"""
 films = {
     "Le Seigneur des Anneaux" : 12,
     "Harry Potter" : 9,

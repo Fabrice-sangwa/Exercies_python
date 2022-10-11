@@ -10,4 +10,26 @@ films = {
 print("Les prix des films ce soir")
 print("-"*25)
 for key, value in films.items():
-    print(key, str(value)+ "$")
+    print(key,":", value, "$")
+    
+print("-"*25)
+entreprise = {
+    "employees_list" :{
+        1 : {
+            "name"  : "Fabrice",
+            "last_name" : "SANGWA" 
+        }, 
+        2 : {
+            "name" : "John",
+            "last_name" : "Smith"
+        },
+        3 : {
+            "name" : "Patricia",
+            "last_name" : "Larson"
+        }
+        
+    }
+}
+
+print("Le premier employé :", entreprise["employees_list"][1]["name"])  
+print("Le nombre d'employés :",len(entreprise.get("employees_list")))
