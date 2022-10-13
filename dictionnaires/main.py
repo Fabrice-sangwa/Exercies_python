@@ -10,4 +10,4 @@ films["Le Seigneur des Anneaux"] = 80
 prix = films["Le Seigneur des Anneaux"] + films["Harry Potter"] + films["Blade Runner"]
 print(prix)
 print(list(films.keys()))
-print(list(films.values))
+print(list(films.values()))

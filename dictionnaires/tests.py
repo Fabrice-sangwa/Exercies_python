@@ -32,4 +32,4 @@ entreprise = {
 }
 
 print("Le premier employé :", entreprise["employees_list"][1]["name"])  
-print("Le nombre d'employés :",len(entreprise.get("employees_list")))
+print("Le nombre d'employés :",len(entreprise.get("employees_list", "")))
