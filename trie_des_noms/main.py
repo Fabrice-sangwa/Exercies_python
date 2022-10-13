@@ -1,13 +1,7 @@
-from genericpath import exists
 from pathlib import Path
-from unicodedata import name
-
-
-
 
 FILE_PATH = Path.cwd() / "trie_des_noms" / "prenom.txt"
-liste = []
-#print(FILE_PATH)
+
 with open (FILE_PATH, "r", encoding="utf-8") as f: 
     names = f.read().strip()
     
