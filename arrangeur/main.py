@@ -1,16 +1,35 @@
+
 from pathlib import Path
 
-dirs = {".jpg": "Images",
+#You can add and specify another file extension that you have or want to sort
+
+extensions = {".jpg": "Images",
         ".gif": "Images",
         ".mp4": "Videos",
         ".pdf": "Documents",
         ".mp3": "Musiques",
-        ".wav": "Musiques"}
+        ".wav": "Musiques", 
+        ".avi": "Videos",
+        ".bmp": "Images",
+        ".png": "Images",
+        ".jpg": "Images",
+        ".txt": "Documents",
+        ".pptx": "Documents",
+        ".csv": "Documents",
+        ".xls": "Documents",
+        ".odp": "Documents",
+        ".pages": "Documents", 
+        ".py" : "Python"}    
 
-tri_dir = Path.home() / "Tri"
-files = [f for f in tri_dir.iterdirs() if f.is_file()]
-for f in files:
-    # Si aucune correspondance n'est trouvé pour l'extension, on place les fichiers dans un dossier Autres
-    output_dir = tri_dir / dirs.get(f.suffix, "Autres")
-    output_dir.mkdir(exist_ok=True)
-    f.rename(output_dir / f.name)
+#you can indicate here the path of the folder to which you want to add storage
+DIR_PATH = Path.cwd() / "arrangeur" / "data"
+
+
+files = [f for f in DIR_PATH.iterdir() if f.is_file]
+
+for file in files : 
+        FINAL_DIR = DIR_PATH /extensions.get(file.suffix, "Autres")
+        FINAL_DIR.mkdir(exist_ok=True)
+        file.rename(FINAL_DIR/file.name)
+        
+     
