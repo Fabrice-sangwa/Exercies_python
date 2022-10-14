@@ -1,4 +1,3 @@
-from re import L
 
 
 chemin = input(r"Veuillez Saisir le chemin d'accès du fichier : ")
@@ -12,3 +11,4 @@ except FileNotFoundError:
     print(f"{chemin} est introuvable.")
 except:
     print("Une erreur est survenue")
+
