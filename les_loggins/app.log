@@ -1,0 +1,5 @@
+2022-10-14 18:33:24,458 - DEBUG - La fonction a bien été exécuté 
+2022-10-14 18:33:24,459 - INFO - Meessage d'information pour l'utilisateur
+2022-10-14 18:33:24,459 - WARNING - Message d'avertissement
+2022-10-14 18:33:24,459 - ERROR - une erreur est survenue
+2022-10-14 18:33:24,459 - CRITICAL - Erreur fatale d'exécution
