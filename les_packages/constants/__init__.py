@@ -1,0 +1,1 @@
+print("Le package constants a été importé")
