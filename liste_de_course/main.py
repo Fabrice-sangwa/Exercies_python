@@ -1,4 +1,4 @@
-from os import sys
+from os import system
 
 
 liste = []
@@ -67,7 +67,7 @@ while True :
                 answer = input(f"Erreur choisissez soit y, soit n\n{indicator} ")
             if answer== "y":
                 print("A bientot")
-                sys.exit()   
+                system.exit()   
             else : 
                 print(line)
                 
