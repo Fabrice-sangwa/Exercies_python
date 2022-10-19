@@ -1,13 +1,13 @@
 import sqlite3
 
 
-connexion = sqlite3.connect("databas.db")
+connexion = sqlite3.connect("database.db")
 
 curseur = connexion.cursor()
 
 
-d = {"prenom" : "Dupond"}
-curseur.execute("select * from employees where prenom=:prenom", d)
+#d = {"prenom" : "Dupond"}where prenom=:prenom, d
+curseur.execute("select * from employees")
 data = curseur.fetchall()
 print(data)
 

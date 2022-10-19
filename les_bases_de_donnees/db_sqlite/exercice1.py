@@ -4,7 +4,7 @@ import sqlite3
 
 
 
-connexion = sqlite3.connect("databas.db")
+connexion = sqlite3.connect("database.db")
 
 curseur = connexion.cursor()
 
