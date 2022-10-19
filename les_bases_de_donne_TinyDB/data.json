@@ -1,0 +1,28 @@
+{
+    "_default": {},
+    "Users": {
+        "1": {
+            "name": "Skin",
+            "salary": 23000
+        },
+        "2": {
+            "name": "Patrick",
+            "salary": 18000
+        },
+        "3": {
+            "name": "James",
+            "salary": 20000
+        }
+    },
+    "Roles": {
+        "1": {
+            "name": "CEO"
+        },
+        "2": {
+            "name": "Programmer"
+        },
+        "3": {
+            "name": "Designer"
+        }
+    }
+}
