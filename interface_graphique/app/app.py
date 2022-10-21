@@ -63,7 +63,12 @@ class App(QtWidgets.QWidget):
     
     #cete methode pemert de calculer la conversion 
     def compute(self):
-        print("compute")
+        montant = self.spn_montant.value()
+        devise_from = self.cbb_devisesFrom.currentText()
+        devise_to = self.cbb_devisesTo.currentText()
+        print(montant)
+        print(devise_to)
+        print(devise_from)
     
     #cette methode permet d'inverser les devises
     def inverser_devise(self):
