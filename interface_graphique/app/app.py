@@ -1,13 +1,16 @@
 from PySide2 import QtWidgets
+import currency_converter
 
 #Cette classe reprénte la fenêtre
 class App(QtWidgets.QWidget):
     
     def __init__(self):
         super().__init__()
+        self.c = currency_converter.CurrencyConverter()
         self.setWindowTitle("Convertisseur de devise")
         self.setup_ui()
-        
+        self.set_default_values()
+        self.set_connections()
         
     #Créateur de composants de l'interface
     def setup_ui(self):
@@ -31,8 +34,40 @@ class App(QtWidgets.QWidget):
         self.layout.addWidget(self.spn_montantConverti)
         self.layout.addWidget(self.btn_inverser)
         
+    #cette fonction permet de mettre les valeurs par defaut
+    def set_default_values(self):
+        #ajouter des valeurs à la conboBox. Ces valeurs doivent être des chaînes de caractère
+        self.cbb_devisesFrom.addItems(sorted(list(self.c.currencies)))
+        self.cbb_devisesTo.addItems(sorted(list(self.c.currencies)))
+        #présicer le texte par defaut d'une comboBox
+        self.cbb_devisesFrom.setCurrentText("EUR")
+        self.cbb_devisesTo.setCurrentText("EUR")
         
+        
+        #Modifier les montants
+        self.spn_montant.setRange(1, 1_000_000)
+        self.spn_montantConverti.setRange(1, 1_000_000)
+        
+        #Mettre les valeurs sur les spinBox
+        self.spn_montant.setValue(100)
+        self.spn_montantConverti.setValue(100)
+        
+    #cette methode permet des recupérer toutes les actions sur un les widgets de l'interface graphique
+    def set_connections(self):
+        #on récupère le signal sur les cbb et spn et on les connecte à des méthodes
+        #activates.connect pour les cbb, valueChange.connect pour les spn et cliked.connect pour le btn
+        self.cbb_devisesFrom.activated.connect(self.compute)
+        self.cbb_devisesTo.activated.connect(self.compute)
+        self.spn_montant.valueChanged.connect(self.compute)
+        self.btn_inverser.clicked.connect(self.inverser_devise)
     
+    #cete methode pemert de calculer la conversion 
+    def compute(self):
+        print("compute")
+    
+    #cette methode permet d'inverser les devises
+    def inverser_devise(self):
+        print("inverser")
         
 #création de l'application      
 app  = QtWidgets.QApplication([])
