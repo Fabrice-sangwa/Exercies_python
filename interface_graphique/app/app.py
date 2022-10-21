@@ -11,6 +11,8 @@ class App(QtWidgets.QWidget):
         self.setup_ui()
         self.set_default_values()
         self.set_connections()
+        self.setup_css()  
+        self.resize(500,50)
         
     #Créateur de composants de l'interface
     def setup_ui(self):
@@ -61,6 +63,18 @@ class App(QtWidgets.QWidget):
         self.spn_montant.valueChanged.connect(self.compute)
         self.btn_inverser.clicked.connect(self.inverser_devise)
     
+    #mise en place du style de la fenêtre
+    def setup_css(self):
+        #changer la couleur de la feuille de style
+        self.setStyleSheet("""
+        
+            background-color: rgb(28, 30, 30);
+            color: rgb(240, 240, 240);
+            border: none;
+        """)
+        
+        
+    
     #cete methode pemert de calculer la conversion 
     def compute(self):
         montant = self.spn_montant.value()
@@ -73,9 +87,7 @@ class App(QtWidgets.QWidget):
         except currency_converter.currency_converter.RateNotFoundError:
             print("La conversion ne passe pas ")
         else :
-            self.spn_montantConverti.setValue(resultat)
-        
-        
+            self.spn_montantConverti.setValue(resultat)  
         
     #cette methode permet d'inverser les devises
     def inverser_devise(self):
@@ -87,6 +99,8 @@ class App(QtWidgets.QWidget):
         self.cbb_devisesTo.setCurrentText(devise_from)
     
         self.compute()
+        
+        
         
 #création de l'application      
 app  = QtWidgets.QApplication([])
